@@ -8,7 +8,5 @@ export const useFetchProducts = () => {
     fetchURL(setProducts)
   }, [])
 
-  console.log({ products })
-
   return { products }
 }

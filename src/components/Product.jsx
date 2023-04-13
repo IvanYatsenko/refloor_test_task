@@ -2,6 +2,7 @@ import { Card, Image } from 'antd'
 import Title from 'antd/es/typography/Title'
 import Text from 'antd/es/typography/Text'
 import { STYLES } from '../constants/constants'
+import { objectOf, string } from 'prop-types'
 
 export const Product = ({ product }) => {
   return (
@@ -22,4 +23,8 @@ export const Product = ({ product }) => {
       </Text>
     </Card>
   )
+}
+
+Product.propTypes = {
+  product: objectOf(string),
 }

@@ -4,7 +4,7 @@ import { Content } from 'antd/es/layout/layout'
 import { useFetchProducts } from './hooks/useFetchProducts'
 
 function App() {
-  const {products} = useFetchProducts()
+  const { products } = useFetchProducts()
 
   return (
     <Layout>
