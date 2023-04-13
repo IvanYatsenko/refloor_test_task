@@ -1,31 +1,19 @@
 import { useEffect, useState } from 'react'
+import { fetchURL } from './services/services'
+import { Product } from './components/Product.jsx'
 
 function App() {
   const [products, setProducts] = useState([])
 
-  const fetchURL = async () => {
-    let response = await fetch('https://moscow.fargospc.ru/test/json/')
-    if (response.ok) {
-      let json = await response.json()
-      setProducts(json)
-      console.log(json)
-    } else {
-      alert('Ошибка HTTP: ' + response.status)
-    }
-  }
-
   useEffect(() => {
-    fetchURL()
+    fetchURL(setProducts)
   }, [])
 
   return (
     <div className="app">
-      {products.map((element) => (
-        <div key={element.id} className="product">
-          <p>{element.title}</p>
-          <img src={element.src} alt={element.title} />
-        </div>
-      ))}
+      {products.map((product) => {
+        return <Product key={product.id} product={product} />
+      })}
     </div>
   )
 }
