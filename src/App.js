@@ -1,15 +1,10 @@
-import { useEffect, useState } from 'react'
-import { fetchURL } from './services/services'
 import { Product } from './components/Product.jsx'
 import { Layout, Space } from 'antd'
 import { Content } from 'antd/es/layout/layout'
+import { useFetchProducts } from './hooks/useFetchProducts'
 
 function App() {
-  const [products, setProducts] = useState([])
-
-  useEffect(() => {
-    fetchURL(setProducts)
-  }, [])
+  const {products} = useFetchProducts()
 
   return (
     <Layout>
