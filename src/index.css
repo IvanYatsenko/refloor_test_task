@@ -1,5 +1,26 @@
-.app {
+.products {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  align-items: stretch;
+  grid-template-columns: 1fr;
   gap: 20px;
+}
+.product {
+  height: 100%;
+  text-align: center;
+  padding-top: 20px;
+}
+@media (min-width: 450px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 991px) {
+  .products {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
