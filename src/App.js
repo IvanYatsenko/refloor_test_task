@@ -1,7 +1,7 @@
-import { Product } from './components/Product.jsx'
-import { Layout, Space } from 'antd'
+import { Layout } from 'antd'
 import { Content } from 'antd/es/layout/layout'
 import { useFetchProducts } from './hooks/useFetchProducts'
+import { ProductsList } from './components/ProductsList.jsx'
 
 function App() {
   const { products } = useFetchProducts()
@@ -9,11 +9,7 @@ function App() {
   return (
     <Layout>
       <Content>
-        <Space className="products">
-          {products.map((product) => {
-            return <Product key={product.id} product={product} />
-          })}
-        </Space>
+        <ProductsList products={products} />
       </Content>
     </Layout>
   )
