@@ -1,6 +1,6 @@
 import { Space } from 'antd'
 import { Product } from './Product.jsx'
-import { arrayof, objectof, string } from 'prop-types'
+import { array } from 'prop-types'
 
 export const ProductsList = ({ products }) => {
   return (
@@ -12,6 +12,6 @@ export const ProductsList = ({ products }) => {
   )
 }
 
-Product.propTypes = {
-  products: arrayof(objectof(string)),
+ProductsList.propTypes = {
+  products: array,
 }
