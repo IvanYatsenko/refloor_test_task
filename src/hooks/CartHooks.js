@@ -18,5 +18,15 @@ export const useProductInCart = () => {
       }
     })
   }
-  return productsInCart
+  let curretnSum = {
+    summ: 0,
+    currency: '',
+  }
+
+  productsInCart.forEach((product) => {
+    curretnSum.summ += product.count * product.price
+    curretnSum.currency = product.currency
+  })
+
+  return [productsInCart, curretnSum]
 }
