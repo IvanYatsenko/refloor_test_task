@@ -27,6 +27,7 @@ export const CartDetail = () => {
 
   return (
     <Table
+      scroll={{ x: 991 }}
       loading={isLoading}
       dataSource={productsInCart}
       pagination={false}
